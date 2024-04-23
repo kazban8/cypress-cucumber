@@ -31,6 +31,8 @@ Then('I should be logged in successfully', () => {
 });
 
 Then('Button is disable', () => {
+    cy.get('#signinEmail').should('have.value', '');
+    cy.get('#signinPassword').should('have.value', '');
     cy.get('.btn.btn-primary').should('not.have.attr', 'disabled');
 
 });
