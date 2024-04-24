@@ -10,7 +10,7 @@ Given('I am on the site page', () => {
 });
 
 
-When('I click on Login button', () => {
+When('I click on SignIn button', () => {
     cy.get('.header_signin').click();
 });
 
@@ -22,7 +22,7 @@ When('I enter {string} pass', (pass) => {
     cy.get('#signinPassword').type(pass);
 });
 
-When('I click on Login', () => {
+When('I click on Login button', () => {
     cy.contains('Login').click();
 });
 
@@ -30,7 +30,7 @@ Then('I should be logged in successfully', () => {
     cy.url().should('include', '/panel/garage');   
 });
 
-Then('Button is disable', () => {
+Then('I expect Login button is disabled', () => {
     cy.get('#signinEmail').should('have.value', '');
     cy.get('#signinPassword').should('have.value', '');
     cy.get('.btn.btn-primary').should('not.have.attr', 'disabled');
